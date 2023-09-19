@@ -105,7 +105,7 @@ void inserirElemento()
 
 		if (pos != -1)
 		{
-			cout << "Elemento já esta na lista" << endl;
+			cout << "Elemento jÃ¡ esta na lista" << endl;
 		}
 		else
 		{
@@ -122,7 +122,24 @@ void inserirElemento()
 
 void excluirElemento()
 {
+	if (nElementos == 0) {
+		cout << "Nao sera possivel remover.\n";
+	} 
+	else {
+		int valor;
+		cout << "Digite o elemento que deseja remover: ";
+		cin >> valor;
+		int pos = posicaoElemento(valor);
 
+		if (pos != -1) {
+			lista[pos] = lista[nElementos - 1];
+			nElementos--;
+			cout << "Elemento removido.\n";
+		}
+		else {
+			cout << "Elemento nao encontrado na lista.\n";
+		}
+	}
 
 }
 
